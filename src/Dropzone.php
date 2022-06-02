@@ -4,6 +4,7 @@ namespace Dilab;
 
 use League\Flysystem\FileExistsException;
 use League\Flysystem\Filesystem;
+use League\Flysystem\Local\LocalFilesystemAdapter;
 
 class Dropzone
 {
@@ -41,7 +42,7 @@ class Dropzone
 
         $this->root = $root;
         
-        $adapter = new League\Flysystem\Local\LocalFilesystemAdapter(
+        $adapter = new LocalFilesystemAdapter(
         // Determine root directory
              __DIR__.'public/content/upload'
         );
