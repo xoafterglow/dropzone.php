@@ -103,7 +103,7 @@ class Dropzone
     private function isUploadCompleted($meta)
     {
         return
-              intval($meta[$this->metaOption['dzchunkindex']]) == intval($meta[$this->metaOption['dztotalchunkcount']]) - 1;
+              intval($meta[$this->metaOption['dzchunkindex']]) == intval($meta[$this->metaOption['dztotalchunkcount']]);
     }
 
     private function assemble($meta)
