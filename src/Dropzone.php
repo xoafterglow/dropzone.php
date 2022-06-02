@@ -81,7 +81,7 @@ class Dropzone
      */
     private function isAlreadyUploaded($meta)
     {
-        return $this->filesystem->has($this->tmpFilePath($meta));
+        return $this->filesystem->fileExists($this->tmpFilePath($meta));
     }
 
     private function uploadToTmp($stream, $meta)
