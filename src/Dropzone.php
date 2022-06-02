@@ -103,8 +103,7 @@ class Dropzone
     private function isUploadCompleted($meta)
     {
         return
-            count($this->filesystem->listContents($this->tmpDirPath($meta))) ==
-            intval($meta[$this->metaOption['dztotalchunkcount']]);
+              count($this->filesystem->listContents($this->tmpDirPath($meta)))->sortByPath()->toArray() == intval($meta[$this->metaOption['dztotalchunkcount']]);
     }
 
     private function assemble($meta)
