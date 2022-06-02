@@ -44,7 +44,7 @@ class Dropzone
         
         $adapter = new LocalFilesystemAdapter(
         // Determine root directory
-             __DIR__.'public/content/upload'
+             __DIR__.'/public/content/upload'
         );
 
         $this->filesystem = new Filesystem($adapter);
