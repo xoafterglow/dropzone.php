@@ -41,8 +41,11 @@ class Dropzone
         $this->name = time();
 
         $this->root = $root;
-
-        $adapter = new Local($root);
+        
+        $adapter = new League\Flysystem\Local\LocalFilesystemAdapter(
+        // Determine root directory
+             __DIR__.'public/content/upload'
+        );
 
         $this->filesystem = new Filesystem($adapter);
     }
