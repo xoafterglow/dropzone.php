@@ -64,8 +64,6 @@ class Dropzone
 
         $this->assemble($meta);
 
-        $this->removeTmpDir($meta);
-
         return $this;
     }
 
@@ -102,8 +100,7 @@ class Dropzone
      */
     private function isUploadCompleted($meta)
     {
-        return
-              intval($meta[$this->metaOption['dzchunkindex']]) == intval($meta[$this->metaOption['dztotalchunkcount']]);
+        return intval($meta[$this->metaOption['dzchunkindex']]) +1 == intval($meta[$this->metaOption['dztotalchunkcount']]);
     }
 
     private function assemble($meta)
@@ -139,10 +136,6 @@ class Dropzone
 
     }
 
-    private function removeTmpDir($meta)
-    {
-        $this->filesystem->deleteDir($this->tmpDirPath($meta));
-    }
 
     private function tmpFilePath($meta)
     {
