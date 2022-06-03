@@ -161,7 +161,7 @@ class Dropzone
         $uploadFolder = $this->uploadDir . self::DS . $meta[$this->metaOption['dzuuid']];
 
         if (!$this->filesystem->directoryExists($uploadFolder)) {
-            $this->filesystem->createDir($uploadFolder);
+            $this->filesystem->createDirectory($uploadFolder);
         };
 
         return $uploadFolder . self::DS . $this->name;
