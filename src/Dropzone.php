@@ -107,10 +107,6 @@ class Dropzone
     {
         $contents = $this->filesystem->listContents($this->tmpDirPath($meta), true);
 
-        uasort($contents, function ($a, $b) {
-            return $a['filename'] > $b['filename'];
-        });
-
         foreach ($contents as $object) {
 
             $stream = $this->filesystem->readStream($object['path']);
